@@ -37,9 +37,7 @@ body {
     overflow: hidden;
 }
 
-
 /*header*/
-
 #header {
     border-bottom: 1px solid #ECECEC;
 }
@@ -91,6 +89,7 @@ body {
     line-height: 1.2;
     font-weight: 500;
     letter-spacing: 0.02em;
+    position: relative;
 }
 
 .nav-contacts .item:first-child {
@@ -101,6 +100,18 @@ body {
 .nav-list .link:focus,
 .nav-list .link.current {
     color: var(--accent-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-list .link.current::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    bottom: -3px;
+    border-radius: 2px;
+    background-color: #188CE8;
 }
 
 .nav-contacts .link {
@@ -132,9 +143,7 @@ body {
     fill: currentColor
 }
 
-
 /*class container*/
-
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -143,15 +152,11 @@ body {
     padding-right: 15px;
 }
 
-
 /*--main--*/
-
-
 /*hero*/
-
 .hero {
     background-color: #2F303A;
-    background-image: linear-gradient( rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/firstimg.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../image/firstimg.jpg);
     height: 600px;
     background-repeat: no-repeat;
     background-position: center;
@@ -190,9 +195,7 @@ body {
     background: #188CE8
 }
 
-
 /*features*/
-
 .features-gray {
     display: flex;
     justify-content: center;
@@ -249,9 +252,7 @@ body {
     color: var(--second-text-color)
 }
 
-
 /*we doing*/
-
 .doing {
     padding-bottom: 94px;
 }
@@ -270,13 +271,85 @@ body {
     display: flex;
 }
 
+.img-link li>img {
+    display: block;
+}
+
 .img-item:nth-child(-n+2) {
     margin-right: 30px;
 }
 
+.first-img1 {
+
+
+    width: 370px;
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.first-img1 h3 {
+    padding: 27px 82px 27px 82px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--first-color);
+}
+
+.img1 {
+
+    position: relative;
+}
+
+.first-img1 {
+    position: absolute;
+    bottom: 0;
+}
+
+.first-img1 h3 {
+    padding: 27px 82px 27px 82px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--first-color);
+}
+
+.img2 {
+
+    position: relative;
+}
+
+.first-img2 {
+    position: absolute;
+    bottom: 0;
+}
+
+.first-img1 h3 {
+    padding: 27px 82px 27px 82px;
+    font-size: 14px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--first-color);
+}
+
+.img3 {
+
+    position: relative;
+}
+
+.first-img3 {
+    position: absolute;
+    bottom: 0;
+}
 
 /*team*/
-
 .social {
     display: flex;
     justify-content: space-around;
@@ -347,9 +420,7 @@ body {
     margin-bottom: 16px;
 }
 
-
 /*client*/
-
 .first-client {
     padding-top: 94px;
     padding-bottom: 94px;
@@ -377,9 +448,7 @@ body {
     fill: var(--accent-color)
 }
 
-
 /*footer*/
-
 .footer {
     background: #2F303A;
     padding-top: 60px;
@@ -470,12 +539,8 @@ address p {
     color: var(--accent-color);
 }
 
-
 /*страница portfolio*/
-
-
 /*filters*/
-
 .filters button:hover,
 .filters button:focus {
     background: var(--accent-color);
@@ -503,9 +568,7 @@ address p {
     margin-right: 8px;
 }
 
-
 /*projects*/
-
 .logo-first {
     text-shadow: none
 }
@@ -533,12 +596,16 @@ address p {
     /*ужимаем маржины флексм-элементов*/
 }
 
+
+
+
 .project-item {
     display: block;
     border-right: 1px solid #EEEEEE;
     border-bottom: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
     padding: 20px 24px;
+
 }
 
 .project-link:hover,
@@ -551,6 +618,31 @@ address p {
     display: block
 }
 
+.project-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #188CE8;
+    transform: translateY(100%);
+    transition: transform 250ms ease;
+
+
+}
+
+.project-link:hover .overlay {
+    transform: translateY(0);
+
+
+}
+
 .flex-element {
     /*width: calc((100% - 60px) / 3);
     margin-right:30px;
@@ -558,7 +650,6 @@ address p {
     width: 370px;
     margin: 15px;
 }
-
 
 /*
 .flex-element:nth-child(3n) {
@@ -568,7 +659,6 @@ address p {
     margin-bottom: 0px;
 }
 */
-
 .projects h3 {
     font-size: 18px;
     line-height: 2;
