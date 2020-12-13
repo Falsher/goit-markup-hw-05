@@ -190,8 +190,10 @@ body {
     color: var(--first-color);
     text-align: center;
     border-radius: 4px;
+    border: none;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer
 }
 
 .hero-discription .hero-button:hover {
@@ -199,6 +201,8 @@ body {
 }
 
 /*modal*/
+
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -206,15 +210,42 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 528px;
     height: 581px;
     background-color: var(--first-color);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 221px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal button {
+
+    width: 30px;
+    height: 30px;
+    background-color: var(--first-color);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 8px 8px 543px 490px;
+    cursor: pointer
+}
+
+.modal-vektor {
+    width: 11px;
+    height: 11px;
 }
 
 /*features*/
@@ -301,7 +332,13 @@ body {
     margin-right: 30px;
 }
 
+.img-link li {
+    position: relative;
+}
+
 .first-img1 {
+    position: absolute;
+    bottom: 0;
     width: 370px;
     background: rgba(47, 48, 58, 0.8);
 }
@@ -317,54 +354,19 @@ body {
     color: var(--first-color);
 }
 
-.img1 {
-    position: relative;
-}
 
-.first-img1 {
-    position: absolute;
-    bottom: 0;
-}
 
-.first-img1 h3 {
-    padding: 27px 82px 27px 82px;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 0.03em;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--first-color);
-}
 
-.img2 {
-    position: relative;
-}
 
-.first-img2 {
-    position: absolute;
-    bottom: 0;
-}
 
-.first-img1 h3 {
-    padding: 27px 82px 27px 82px;
-    font-size: 14px;
-    line-height: 1.5;
-    letter-spacing: 0.03em;
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    color: var(--first-color);
-}
 
-.img3 {
-    position: relative;
-}
 
-.first-img3 {
-    position: absolute;
-    bottom: 0;
-}
+
+
+
+
+
+
 
 /*team*/
 .social {
